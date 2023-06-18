@@ -1,0 +1,24 @@
+{% load static %}
+{% include 'header.html' %}
+
+<div class = "doctor-section py-5">
+<h1 class = "text-center pb-5"> Our Doctors </h1>
+<div class= "container row m-auto">
+
+{% for x in data %}
+<div class = "col-md-4">
+<img src = "{{x.image.url}}" height = 200 width = 200 class = "d-block m-auto"></img>
+<br>
+<p name = "doctor_name" class = "text-center"> <i><b>Name: Dr {{x.name}}</b></i></p>
+
+<p name = "doctor_gmail" class = "text-center">Email: {{x.email}}</p>
+<p class = "text-center">Hospital Name: {{x.hospital_name}}</p>
+<p class = "text-center">Specialist: {{x.specialist}}</p>  
+</div>
+{% endfor%}
+
+</div>
+</div>
+</div>
+{% include 'footer.html' %}
+   

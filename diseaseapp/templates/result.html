@@ -1,0 +1,21 @@
+{% load static%}
+{% include 'header.html' %}    
+<div class = "py-5">
+    
+       <h5 class = "text-center">According to our calculation we can predict that you might have :
+        <b> <br>{{Disease}}</b></h4>
+
+
+      {% if Disease == 'Heart Disease Found'%}
+          <h5 class = "text-center"> Hello {{user.username}} have a Heart Disease. So Please book an appointment for the check up.
+            <br/>Thank you !
+          </h5>
+
+            <a href = "{% url 'appointment' %}"><button class = "btn btn-success d-block m-auto">Book your appointment</button></a>
+
+      {% else %}
+            <h5 class = "text-center"> Hello {{user.username}} you do not have a Heart Disease. But Still you can visit our clinic 
+        for the normal check up. <br/>Thank you !</h5>      
+        {% endif%}
+</div>
+{% include 'footer.html' %}    

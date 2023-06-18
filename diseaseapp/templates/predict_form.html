@@ -1,0 +1,107 @@
+{%load static%}
+{% include 'header.html' %}
+
+<div class = "container">
+  <div class = "row">
+    <div class = "col-12 py-5">
+      <video width="100%" height="240" autoplay loop muted>
+        <source src= "{% static 'videos/video.mp4' %}" type="video/mp4">
+      </video>
+    </div>
+
+
+    <div class = "col-lg-6 col-md-6">
+      <form action="predict" method="POST" class = "py-5">
+        {% csrf_token %}
+
+          <h3 class = "fw-bold pb-5">Personal Information</h4>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text label-input100" id="basic-addon1">Name</span>
+              <input type="text" class="form-control input100 " placeholder="Full Name">
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text label-input100" id="basic-addon1">Age</span>
+              <input type = "number" name = "ages" min="29" max="77" required>
+            </div>
+
+            <div class="input-group">
+              <div class="input-group-text">
+                <span class="d-block label-input100 pe-4">Sex </span>        
+                <input class="form-check-input1 mt-0" type="radio" name="sex" value="1" style="margin: 0px 10px"> Male
+                <input class="form-check-input2 mt-0" type="radio" name="sex" value="0" style="margin: 0px 10px"> Female
+              </div>
+            </div>
+
+          <h3 class = "fw-bold py-5">Medical Information</h4>
+
+
+          <div class="input-group mb-3">
+            <span class="input-group-text label-input100" id="basic-addon1">Chest Pain Type(CP) </span>
+            <input type = "number" name = "cp" min="0" max="3" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text label-input100" id="basic-addon1">trestbps</span>
+            <input type = "number" name = "trestbps" min="94" max="200" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text label-input100" id="basic-addon1">Chol</span>
+            <input type = "number" name = "chol" min="126" max="564" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text label-input100" id="basic-addon1">Fasting Blood Sugar(fbs)</span>
+            <input type = "number" name = "fbs" min="0" max="1" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text label-input100" id="basic-addon1">Resting Electrocardiographic Results(restecg)</span>
+            <input type = "number" name = "restecg" min="0" max="2" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text label-input100" id="basic-addon1">Maximum Heart Rate Achieved(thalach)</span>
+            <input type = "number" name = "thalach" min="71" max="202" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text label-input100" id="basic-addon1">Exercise Induced Angina</span>
+            <input type = "number" name = "exang" min="0" max="1" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text label-input100" id="basic-addon1">Oldpeak</span>
+            <input type = "number" step = ".01" name = "oldpeak" min="0" max="6.2" required>
+          </div>   
+
+          <div class="input-group mb-3">
+            <span class="input-group-text label-input100" id="basic-addon1">Slope of the Peak Exercise(Slope)</span>
+            <input type = "number" name = "slope" min="0" max="2" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text label-input100" id="basic-addon1">Number of major vessels(Ca)</span>
+            <input type = "number" name = "ca" min="0" max="4" required>
+          </div>
+                 
+          <div class="input-group mb-3">
+            <span class="input-group-text label-input100" id="basic-addon1">Thal</span>
+            <input type = "number" name = "thal" min="0" max="3" required>
+          </div>
+
+          <button class = "btn btn-success w-100">Submit</button>
+
+      </form>
+    </div>
+  
+    <div class = "col-lg-6 col-md-6 m-auto">
+      <img src= "{% static 'images/Information.png' %}" class = "img-fluid">
+    </div>
+  </div>
+</div>
+
+
+{% include 'footer.html' %}    

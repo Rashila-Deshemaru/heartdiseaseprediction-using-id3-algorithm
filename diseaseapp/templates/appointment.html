@@ -1,0 +1,84 @@
+{% load static %} 
+{% include 'header.html' %}
+
+
+<div class = "container py-5 d-block m-auto">
+<center><h2>Book an Appointment</h2></center>
+<br>
+    <form action = "appointment_result" method = "POST">
+        {% csrf_token%}
+
+        <div class="input-group mb-3 justify-content-center">
+            <span class="input-group-text label-input100" id="basic-addon1">Name: </span>
+            <input type = "text" name = "your_name" placeholder = "Your name" required>
+        </div>
+
+        <div class="input-group mb-3 justify-content-center">
+            <span class="input-group-text label-input100" id="basic-addon1">Contact: </span>
+            <input type = "text" name = "your_phone" placeholder = "Your Contact" required>
+        </div>
+
+        
+        <div class="input-group mb-3 justify-content-center">
+            <span class="input-group-text label-input100" id="basic-addon1">Address: </span>
+            <input type = "text" name = "your_address" placeholder = "Your address" required>
+        </div>
+
+        <div class="input-group mb-3 justify-content-center">
+            <span class="input-group-text label-input100" id="basic-addon1">Email: </span>
+            <input type = "text" name = "your_email" placeholder = "Your Email" required>
+        </div>
+
+        <div class="input-group mb-3 justify-content-center">
+            <span class="input-group-text label-input100" id="basic-addon1">Day: </span>
+            <select name = "appointment_day">
+                <option> Sunday</option>
+                <option> Monday</option>
+                <option> Tuesday</option>
+                <option> Wednesday</option>
+                <option> Thursday</option>
+                <option> Friday</option>
+            </select>
+            <br><br>
+        </div>
+
+
+        <div class="input-group mb-3 justify-content-center">
+            <span class="input-group-text label-input100" id="basic-addon1">Time: </span>
+        <select name="appointment_time">
+            <option>10 AM - 11AM</option>
+            <option>11 AM - 12 PM</option>
+            <option>12 PM - 1PM</option>
+            <option>1 PM - 2PM</option>
+            <option>2 PM - 3PM</option>
+            <option>3 PM - 4PM</option>
+        </select>
+    </div>
+        <br>
+
+
+        <div class="input-group mb-3 justify-content-center">
+            <span class="input-group-text label-input100" id="basic-addon1">Doctor: </span>
+            <select name = "your_doctor">
+                <option>Dr Babita Sthapit</option>
+                <option>Dr Anish Sulu</option>
+                <option>Dr Luniva Shrestha</option>
+           </select><br><br>
+        </div>
+
+
+        <div class="input-group mb-3 justify-content-center">
+            <span class="input-group-text label-input100" id="basic-addon1">Remarks: </span>
+            <input type = "textbox" name = "your_message" required><br><br>
+        </div>
+
+       <button class = "btn btn-success d-block m-auto"> Submit</button>
+
+
+    </form>
+
+
+</div>
+
+
+    {% include 'footer.html' %}    
